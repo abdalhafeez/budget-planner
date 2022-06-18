@@ -23,7 +23,8 @@ class NewTransaction extends StatelessWidget {
           TextField(
               controller: titleInputController,
               decoration:
-                  InputDecoration(labelText: "Title", prefixIcon: Icon(Icons.title) )),
+                  InputDecoration(labelText: "Title", 
+                                  prefixIcon: Icon(Icons.title) )),
                   
                 ),
                  Container(

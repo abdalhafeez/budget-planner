@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import "../models//transations.dart";
@@ -19,10 +18,13 @@ class TransactionsList extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 )),
             Container(
+              height: 300,
                 margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                child: Column(
-                  children: transactions.map((tx) {
+                child: ListView.builder(
+                  itemCount: transactions.length,
+                  itemBuilder:(ctx, index){
                     return Card(
+                      
                         margin: EdgeInsets.all(5),
                         child: Container(
                             padding: EdgeInsets.all(5),
@@ -40,7 +42,7 @@ class TransactionsList extends StatelessWidget {
                                       width: 2,
                                     )),
                                     child: Text(
-                                      tx.amount.toString(),
+                                      transactions[index].amount.toString(),
                                       style: TextStyle(
                                           color: Colors.purple,
                                           fontWeight: FontWeight.bold),
@@ -53,7 +55,7 @@ class TransactionsList extends StatelessWidget {
                                         Container(
                                           padding: EdgeInsets.symmetric(
                                               vertical: 10, horizontal: 3),
-                                          child: Text(tx.title,
+                                          child: Text(transactions[index].title,
                                               style: TextStyle(
                                                   fontWeight: FontWeight.bold)),
                                         ),
@@ -62,7 +64,7 @@ class TransactionsList extends StatelessWidget {
                                                 vertical: 10, horizontal: 3),
                                             child: Text(
                                                 DateFormat("yyyy-MM-dd")
-                                                    .format(tx.date),
+                                                    .format(transactions[index].date),
                                                 style: TextStyle(
                                                     color: Colors.grey,
                                                     overflow:
@@ -91,7 +93,10 @@ class TransactionsList extends StatelessWidget {
                                     ],
                                   ),
                                 ])));
-                  }).toList(),
+                   
+                  }
+                  // children: transactions.map((tx) {
+                  //  }).toList(),
                 )),
           ],
         ));
