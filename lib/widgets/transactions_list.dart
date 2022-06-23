@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import "../models//transations.dart";
 
 class TransactionsList extends StatelessWidget {
-  final List<Transactions> transactions;
+  final transactions;
   TransactionsList(this.transactions);
   @override
   Widget build(BuildContext context) {
@@ -11,10 +10,10 @@ class TransactionsList extends StatelessWidget {
         margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
         child: Column(
           children: [
-            Text("Your Latest Transations",
+            Text("Your Transations",
                 style: TextStyle(
                   fontSize: 20,
-                  color: Colors.blue,
+                  color: Colors.green,
                   fontWeight: FontWeight.bold,
                 )),
             Container(

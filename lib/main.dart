@@ -1,12 +1,8 @@
 
- import 'dart:ffi';
-
-import 'package:flutter/gestures.dart';
-
+import './widgets/chart.dart';
 import './models/transations.dart';
 import './widgets/new_transcation.dart';
-import './widgets/transactions_list.dart';
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 // import "./assets/2.jpg";
 
 void main() {
@@ -20,7 +16,7 @@ class myApp extends StatelessWidget {
       title: "Pharma",
       theme: ThemeData(
           visualDensity: VisualDensity.adaptivePlatformDensity,
-          primarySwatch: Colors.purple),
+          primarySwatch: Colors.green),
       home: HomePage(),
     );
   }
@@ -61,7 +57,6 @@ class _HomePageState extends State<HomePage> {
     showModalBottomSheet(
          context: ctx,
         builder: (builderCtx) {
-
           return GestureDetector(
             onTap: (){},
             behavior: HitTestBehavior.opaque,
@@ -83,9 +78,29 @@ class _HomePageState extends State<HomePage> {
       body:   Container(child:
        SingleChildScrollView(
           child: Column(children: <Widget>[
-            Text("something is not working"),
         // TransactionsList(_userTransations)
-      ])),
+        Chart()
+        // Container(child:
+        //  Card(child:
+        //  Column(children:
+        //   [
+        //     Text("You dont Have Transactions",
+        //      style: TextStyle(
+        //       color: Colors.purple,
+        //       fontSize: 20,
+        //       fontWeight: FontWeight.bold,
+        //       ),),
+
+        //    Container(
+        //    child: Image.asset("assets/images/2.jpeg"))
+        //    ],
+        //    mainAxisAlignment:MainAxisAlignment.center,
+        //    ),
+        //    ),
+        //    margin: EdgeInsets.all(50), 
+        //    ),
+     
+      ]),),
     ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(child: Icon(Icons.add), onPressed: ()=>showForm(context)
